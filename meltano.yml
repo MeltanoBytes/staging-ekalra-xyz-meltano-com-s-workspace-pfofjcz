@@ -5,6 +5,10 @@ environments:
 - name: staging
 - name: prod
 plugins:
+  extractors:
+  - name: tap-meltano-cloud
+    variant: meltanolabs
+    pip_url: git+https://github.com/MeltanoLabs/tap-meltano-cloud.git@v0.1.9
   loaders:
   - name: target-postgres
     variant: matatika
@@ -50,3 +54,5 @@ plugins:
   - name: dbt-artifacts
     variant: matatika
     pip_url: git+https://github.com/Matatika/dbt-artifacts-ext.git@v0.1.0
+include_paths:
+- extractors/*.yml

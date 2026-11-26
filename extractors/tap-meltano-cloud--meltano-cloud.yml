@@ -1,0 +1,7 @@
+plugins:
+  extractors:
+  - name: tap-meltano-cloud--meltano-cloud
+    inherit_from: tap-meltano-cloud
+    annotations:
+      meltano-cloud:
+        ingestion: meltano-cloud
