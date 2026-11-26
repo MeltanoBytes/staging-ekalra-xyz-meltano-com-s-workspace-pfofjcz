@@ -40,6 +40,9 @@ plugins:
       transformers:
       - name: dbt
         variant: dbt-labs
+  - name: files-context-education
+    variant: matatika
+    pip_url: git+https://github.com/meltano/files-context-education.git@v0.1.0
   utilities:
   - name: matatika
     variant: matatika

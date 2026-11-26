@@ -1,0 +1,13 @@
+{
+  "plugin_type": "files",
+  "name": "files-context-education",
+  "namespace": "files_context_education",
+  "variant": "matatika",
+  "label": "Education Context",
+  "repo": "https://github.com/meltano/files-context-education",
+  "pip_url": "git+https://github.com/meltano/files-context-education.git@v0.1.0",
+  "description": "Industry context for education: datasets with no query that brief the people and AI\nassistants working in a workspace on the industry - its segments and source systems, core data\nmodel, key metrics, how to model its data in dbt, and how to handle it.\n\nMeltano Cloud adds it when a workspace's industry is Education\n(OrganisationContextService.INDUSTRY_BUNDLES).",
+  "update": {
+    "*.yml": "true"
+  }
+}

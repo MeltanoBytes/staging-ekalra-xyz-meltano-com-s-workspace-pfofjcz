@@ -1,0 +1,12 @@
+version: datasets/v0.3
+title: Organisation context
+description: |
+  - **Industry:** Education
+
+  Context about the industry is in the datasets of the `files-context-education` file bundle.
+
+  #organisation-context
+raw_data: |-
+  {
+    "industry" : "Education"
+  }

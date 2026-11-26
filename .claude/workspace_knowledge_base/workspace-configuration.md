@@ -19,6 +19,10 @@ recorded here.
 - **Default data store:** Warehouse
 - **State data store:** Warehouse
 
+## Organisation
+
+The organisation's industry is in `analyze/datasets/organisation-context.yml` (its `raw_data`). The organisation's knowledge is every dataset tagged `#organisation-context` - that one, the datasets of an industry context bundle, and any the workspace adds - so read them before creating dbt models or querying the warehouse: `grep -rl '#organisation-context' analyze/datasets`.
+
 ## Data stores
 
 - `Warehouse` (target-postgres, matatika)
@@ -26,6 +30,7 @@ recorded here.
 ## Plugins
 
 - file `analyze-dbt-models` (matatika) — `git+https://github.com/Matatika/analyze-dbt-models@v0.4.0`
+- file `files-context-education` (matatika) — `git+https://github.com/meltano/files-context-education.git@v0.1.0`
 - file `files-dbt` (matatika) — `git+https://github.com/Matatika/files-dbt@v1.6.2`
 - file `files-melty-ai` (matatika) — `git+https://github.com/meltano/files-melty-ai.git@v0.2.3`
 - loader `target-postgres` (matatika) — `git+https://github.com/Matatika/pipelinewise-target-postgres.git@v0.2.2`
