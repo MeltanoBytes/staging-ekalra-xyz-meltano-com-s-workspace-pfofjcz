@@ -1,0 +1,49 @@
+default_environment: dev
+project_id: cee79aa6-5d9f-496b-b07b-e9cb3577bd5d
+environments:
+- name: dev
+- name: staging
+- name: prod
+plugins:
+  loaders:
+  - name: target-postgres
+    variant: matatika
+    pip_url: git+https://github.com/Matatika/pipelinewise-target-postgres.git@v0.2.2
+  transformers:
+  - name: dbt
+    variant: dbt-labs
+    pip_url: dbt-core~=1.7.0 dbt-postgres~=1.7.0 dbt-snowflake~=1.7.0 dbt-bigquery~=1.7.0 dbt-sqlserver~=1.7.0 dbt-clickhouse~=1.7.0 dbt-duckdb~=1.7.0 dbt-databricks~=1.7.0 duckdb==1.5.5
+    requires:
+      files:
+      - name: files-dbt
+        variant: matatika
+  files:
+  - name: analyze-dbt-models
+    variant: matatika
+    pip_url: git+https://github.com/Matatika/analyze-dbt-models@v0.4.0
+    requires:
+      transformers:
+      - name: dbt
+        variant: dbt-labs
+      utilities:
+      - name: dbt-artifacts
+        variant: matatika
+      - name: matatika
+        variant: matatika
+  - name: files-melty-ai
+    variant: matatika
+    pip_url: git+https://github.com/meltano/files-melty-ai.git@v0.2.3
+  - name: files-dbt
+    variant: matatika
+    pip_url: git+https://github.com/Matatika/files-dbt@v1.6.2
+    requires:
+      transformers:
+      - name: dbt
+        variant: dbt-labs
+  utilities:
+  - name: matatika
+    variant: matatika
+    pip_url: matatika~=1.17.1
+  - name: dbt-artifacts
+    variant: matatika
+    pip_url: git+https://github.com/Matatika/dbt-artifacts-ext.git@v0.1.0
